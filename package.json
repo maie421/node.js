@@ -1,0 +1,15 @@
+{
+  "name": "nodebird",
+  "version": "1.0.0",
+  "main": "index.js",
+  "script": {
+    "start": "nodemon app"
+  },
+  "repository": "https://github.com/maie421/node.js.git",
+  "author": "윤영미 <35258834+maie421@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.18.4"
+  }
+}
