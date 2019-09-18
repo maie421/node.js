@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+//const express = require('express');
 const app = express();
-const PORT=3333;
+const PORT=3332;
 
 // respond with "hello world" when a GET request is made to the homepage
 
