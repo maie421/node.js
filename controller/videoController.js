@@ -1,4 +1,6 @@
-export const home=(req,res)=>res.render("home", { pageTitle: "Root" });
+import { videos } from "../db";
+
+export const home=(req,res)=>res.render("home",{pageTitle:"Root",videos});
 export const search=(req,res)=>{
     const{
         query:{searchwrd:searchingBy}
