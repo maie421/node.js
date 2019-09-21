@@ -9,15 +9,15 @@ const SEARCH = "/search";
 const USERS = "/users";
 //  :id로 입력하면 변하는 값이라는걸 인식한다.
 const USERS_DETAIL = "/:id";
-const EDIT_PROFILE = "/:id/edit-profile";
-const CHANGE_PASSWORD = "/:id/change_password";
+const EDIT_PROFILE = "/edit-profile";
+const CHANGE_PASSWORD = "/change_password";
 
 //Videos
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
 const VIDEOS_DETAIL = "/:id";
-const EDIT_VIDEO = "/:id/edit";
-const DELETE_VIDEO = "/:id/delete";
+const EDIT_VIDEO = "/edit";
+const DELETE_VIDEO = "/delete";
 
 const routes = {
   home: HOME,
