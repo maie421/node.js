@@ -1,5 +1,11 @@
 export const home=(req,res)=>res.render("home", { pageTitle: "Root" });
-export const search=(req,res)=>res.render("video/search",{ pageTitle: "Search" });
+export const search=(req,res)=>{
+    const{
+        query:{searchwrd:searchingBy}
+    }=req;
+    console.log(req.query);
+    res.render("video/search",{ pageTitle: "Search",searchingBy});
+};
 
 export const video_home = (req, res) => res.render("VIDEO HOME");
 export const viewo_upload = (req, res) => res.render("video/viewo_upload",{ pageTitle: "Upload" });

@@ -3,6 +3,9 @@ header.header
         a(href=routes.home)
             i.fab.fa-youtube
     .header_column
+        form.frm(action=routes.search,method="get")
+            input(type="text" ,placeholder="검색어를 입력하세요", name="searchwrd")
+    .header_column
         ul
             li
                 a(href=routes.join) Join
