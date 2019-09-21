@@ -1,7 +1,6 @@
 import express from "express";
 import routes from "../routes";
 import {
-  user_home,
   user_detail,
   edit_profile,
   change_password
