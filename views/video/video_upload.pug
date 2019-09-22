@@ -2,7 +2,7 @@ extends ../layout/main
 
 block content
     .form_container
-        form(action=`/videos${routes.upload}`, method="post")
+        form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data")
             label(for="file") 비디오 파일
             input(type="file", name="videoFile", id="file",required=true)
             input(type="text", name="title", placeholder="영상의 제목을 입력해주세요.",required=true)
