@@ -2,7 +2,8 @@ import express from "express";
 import routes from "../routes";
 import {
   video_home,
-  viewo_upload,
+  video_postUpload,
+  video_getUpload,
   video_detail,
   edit_video,
   delete_video
@@ -10,8 +11,10 @@ import {
 
 const videoRouter = express.Router();
 //videoRouter.get(routes.home, video_home);
-videoRouter.get(routes.upload, viewo_upload);
-videoRouter.get(routes.videos_detail, video_detail);
+videoRouter.get(routes.upload, video_getUpload);
+videoRouter.post(routes.upload, video_postUpload);
+
+videoRouter.get(routes.videos_detail(), video_detail);
 videoRouter.get(routes.edit_video, edit_video);
 videoRouter.get(routes.delete_video, delete_video);
 
