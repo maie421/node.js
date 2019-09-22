@@ -1,0 +1,34 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "node.js",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maie421/node.js.git"
+  },
+  "author": "maie421",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maie421/node.js/issues"
+  },
+  "homepage": "https://github.com/maie421/node.js#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.0",
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.4"
+  }
+}
