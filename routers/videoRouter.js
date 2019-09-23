@@ -5,7 +5,8 @@ import {
   video_postUpload,
   video_getUpload,
   video_detail,
-  edit_video,
+  getedit_video,
+  postedit_video,
   delete_video
 } from "../controller/videoController";
 
@@ -17,7 +18,8 @@ videoRouter.get(routes.upload, video_getUpload);
 videoRouter.post(routes.upload, uploadVideo,video_postUpload);
 
 videoRouter.get(routes.videos_detail(), video_detail);
-videoRouter.get(routes.edit_video, edit_video);
-videoRouter.get(routes.delete_video, delete_video);
+videoRouter.get(routes.edit_video(), getedit_video);
+videoRouter.post(routes.edit_video(), postedit_video);
+videoRouter.get(routes.delete_video(), delete_video);
 
 export default videoRouter;

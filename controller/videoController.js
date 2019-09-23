@@ -49,5 +49,39 @@ export const video_detail =async (req, res) => {
     res.redirect(routes.home);
   }
 };
-export const edit_video = (req, res) => res.render("video/edit_video",{ pageTitle: "Edit Video" });
-export const delete_video = (req, res) => res.render("video/delete_video",{ pageTitle: "Delete Video" });
+export const getedit_video =async (req, res) => {
+  const{
+    params:{ id }
+  }=req;
+  try{
+    const video = await Video.findById(id);
+    res.render("video/edit_video",{ pageTitle: `Edit ${video.title}` ,video});
+  }catch(error){
+    res.render(routes.home);
+  }
+};
+export const postedit_video = async (req, res) => {
+  const {
+    params: { id },
+    body: { title, description }
+  } = req;
+  console.log(id, title, description);
+  try {
+    await Video.findOneAndUpdate({ _id: id }, { title, description });
+    res.redirect(routes.videos_detail(id));
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
+export const delete_video = async(req, res) => {
+  const{
+    params:{ id }
+  }=req;
+  try{
+    console.log(`삭제 ${id}`);
+    await Video.findByIdAndRemove({ _id: id });
+    //res.render("video/delete_video",{ pageTitle: "Delete Video" });
+  }catch(error){
+    res.redirect(routes.home);
+  }
+};
