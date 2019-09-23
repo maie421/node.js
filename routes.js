@@ -38,17 +38,17 @@ const routes = {
     if (id) return `/videos/${id}`;
     else return VIDEOS_DETAIL;
   },
-  edit_video: id=>{
-    if(id){
+  edit_video: id => {
+    if (id) {
       return `/videos/${id}/edit`;
-    }else{
+    } else {
       return EDIT_VIDEO;
     }
   },
-  delete_video: id=>{
-    if(id){
+  delete_video: id => {
+    if (id) {
       return `/videos/${id}/delete`;
-    }else{
+    } else {
       return DELETE_VIDEO;
     }
   }

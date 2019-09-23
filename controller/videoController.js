@@ -3,7 +3,7 @@ import Video from "../models/Video";
 
 export const home = async (req, res) => {
   try {	
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({_id:-1});
     console.log(videos);
     res.render("home", { pageTitle: "Root", videos });
   } catch (error) {
@@ -11,12 +11,21 @@ export const home = async (req, res) => {
     res.render("home", { pageTitle: "Root", videos: [] });
   }	 
 };
-export const search=(req,res)=>{
-    const{
-        query:{searchwrd:searchingBy}
-    }=req;
-    console.log(req.query);
-    res.render("video/search",{ pageTitle: "Search",searchingBy,videos});
+export const search = async (req, res) => {
+  const {
+    query: { searchwrd: searchingBy }
+  } = req;
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(videos);
+
+  res.render("video/search", { pageTitle: "Search", searchingBy, videos });
 };
 
 export const video_home = (req, res) => res.render("VIDEO HOME");
